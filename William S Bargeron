@@ -1,0 +1,76 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+      // Prompt user to enter year
+        System.out.println("Enter the year: ");
+        int year = scanner.nextInt();
+        // Prompt user to enter the month
+        System.out.println("Enter the month (1-12): ");
+        // Declare variables "month" and "days". 
+        int month = scanner.nextInt();
+        int days = 0;
+        // Switch statements to identify months and number of days within them. See notes @          // bottom.
+        switch (month)  {
+          case 1: System.out.println("The month of January");
+            days = 31;
+            break; //break statement to advance if case 1 is selected
+          case 3: System.out.println("The month of March");
+            days = 31;
+            break;//break statement to advance if case 3 is selected
+          case 5:  System.out.println("The month of May");
+            days = 31;
+            break;//break statement to advance if case 5 is selected
+          case 7:  System.out.println("The month of July");
+            days = 31;
+            break;//break statement to advance if case 7 is selected
+          case 8:  System.out.println("The month of August");
+            days = 31;
+            break;//break statement to advance if case 8 is selected
+          case 10: System.out.println("The month of October");
+            days = 31;
+            break;//break statement to advance if case 10 is selected
+          case 12: System.out.println("The month of December");
+            days = 31;
+            break;//break statement to advance if case 12 is selected
+          case 4:  System.out.println("The month of April");
+            days = 30;
+            break;//break statement to advance if case 4 is selected
+          case 6:  System.out.println("The month of June");
+            days = 30;
+            break;//break statement to advance if case 6 is selected
+          case 9: System.out.println("The month of September");
+            days = 30;
+            break;//break statement to advance if case 9 is selected
+          case 11: System.out.println("The month of November");
+            days = 30;
+            break;//break statement to advance if case 11 is selected
+          case 2:System.out.println("The month of February");
+            if (isLeapYear(year)) {
+              days = 29;
+            } else {
+              days = 28;
+            }
+            break;//break statement to advance if case 2 is selected
+            // default statement if invalid number for month is selected
+            default:
+            System.out.println("Invalid month. Please enter a value between 1 and 12.");
+            System.exit(1);
+                                 } 
+        // print number of days
+        System.out.println("has " + days + " days in it.");
+    }
+    // Boolean function to determine if a year is a leap year when month 2 is selected.
+    public static boolean isLeapYear(int year) {
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+  // NOTE***I tried to mimmick the zodiac example in the text and it didn't really work out
+  // as efficiently as I imagined it would. I also tried to create a call similar to
+  // what I did with the leapyear function for identifying the months but I couldn't 
+  // make that work either ******
+}
